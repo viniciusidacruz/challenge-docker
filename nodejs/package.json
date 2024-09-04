@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-with-docker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "docker",
+    "node",
+    "js"
+  ],
+  "author": "Vinicius Italo da Cruz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
