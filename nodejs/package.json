@@ -1,9 +1,9 @@
 {
   "name": "nodejs-with-docker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node main.js"
   },
   "keywords": [
     "docker",
@@ -13,6 +13,7 @@
   "author": "Vinicius Italo da Cruz",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
   }
 }
