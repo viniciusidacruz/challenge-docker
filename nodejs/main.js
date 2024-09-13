@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 const connection = mysql.createConnection({
-  host: "mysql",
+  host: "db",
   user: "root",
   password: "root",
   database: "peopledb",
@@ -20,6 +20,20 @@ connection.connect((err) => {
 
 app.get("/", (req, res) => {
   const name = `Person ${Math.floor(Math.random() * 1000)}`;
+  connection.query(
+    `CREATE TABLE IF NOT EXISTS people (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(255) NOT NULL
+    )`,
+    (err) => {
+      if (err) {
+        console.error("Error creating table:", err);
+        return;
+      }
+      console.log("Table 'people' is ready");
+    }
+  );
+
   connection.query(`INSERT INTO people(name) VALUES('${name}')`, (err) => {
     if (err) {
       console.error("Error inserting into MySQL:", err);
